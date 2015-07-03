@@ -1,0 +1,11 @@
+---
+- connection: local
+  hosts: localhost
+  roles:
+    - role: telusdigital.aws-infrastructure
+  vars:
+    domain: teluswebteam.com
+    required_systems:
+      - application
+      - database
+    autodeploy_passthrough_enabled: "{% if environment_tier not in ['production'] %}yes{% else %}no{% endif %}"

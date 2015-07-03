@@ -1,0 +1,22 @@
+---
+- connection: local
+  hosts: localhost
+  roles:
+    - role: telusdigital.nginx
+    - role: telusdigital.php
+    - role: telusdigital.mongodb
+    - role: telusdigital.autodeploy
+    # - role: telusdigital.robot_sweatshop
+  vars_files:
+    - vault.yml
+  roles:
+    nginx_auth_enabled: "{% if environment_tier not in ['production'] %}yes{% else %}no{% endif %}"
+    nginx_auth_username: spork
+    nginx_docroot: /data/www/docroot/www/
+    nginx_php_enabled: yes
+    php_composer: yes
+    mongodb_client: yes
+    autodeploy_composer_enabled: yes
+    autodeploy_composer_root: /data/www/docroot/ci/application
+    autodeploy_repository_origin: "git@bitbucket.org:webchannel/telus-spork.git"
+    autodeploy_initial_deploy: yes

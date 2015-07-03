@@ -1,0 +1,13 @@
+[all:vars]
+project=telus-spork
+environment_tier=development
+
+[common:children]
+application
+database
+
+[application]
+application.telus-spork-development.teluswebteam.com
+
+[database]
+database.telus-spork-development.teluswebteam.com

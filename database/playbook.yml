@@ -1,0 +1,10 @@
+---
+- connection: local
+  hosts: localhost
+  roles:
+    - role: telusdigital.mongodb
+  vars_files:
+    - vault.yml
+  vars:
+    mongodb_client: yes
+    mongodb_server: yes

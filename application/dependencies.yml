@@ -1,0 +1,6 @@
+---
+- src: telusdigital.nginx
+- src: telusdigital.php
+- src: telusdigital.mongodb
+- src: telusdigital.autodeploy
+# - src: telusdigital.robot_sweatshop

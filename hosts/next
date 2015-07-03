@@ -1,0 +1,13 @@
+[all:vars]
+project=telus-spork
+environment_tier=next
+
+[common:children]
+application
+database
+
+[application]
+application.telus-spork-next.teluswebteam.com
+
+[database]
+database.telus-spork-next.teluswebteam.com
