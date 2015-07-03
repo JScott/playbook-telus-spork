@@ -7,8 +7,6 @@
     - role: telusdigital.mongodb
     - role: telusdigital.autodeploy
     # - role: telusdigital.robot_sweatshop
-  vars_files:
-    - vault.yml
   roles:
     nginx_auth_enabled: "{% if environment_tier not in ['production'] %}yes{% else %}no{% endif %}"
     nginx_auth_username: spork
